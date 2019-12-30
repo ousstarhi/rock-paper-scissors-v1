@@ -1,3 +1,9 @@
+const rock = 'Rock';
+const paper = 'Paper';
+const scissors = 'Scissors';
+let userScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
   const choices = [];
   choices.push(rock, paper, scissors);
