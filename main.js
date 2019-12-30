@@ -1,5 +1,6 @@
 function computerPlay() {
-  const choices = ['Rock', 'Paper', 'Scissors'];
+  const choices = [];
+  choices.push(rock, paper, scissors);
   const choiceNumber = Math.floor(Math.random() * choices.length);
   return choices[choiceNumber];
 }
@@ -27,5 +28,3 @@ function playRound() {
     alert('It\'s a draw');
   }
 }
-
-console.log(playRound());
