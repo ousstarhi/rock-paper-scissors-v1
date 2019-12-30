@@ -11,26 +11,33 @@ function computerPlay() {
   return choices[choiceNumber];
 }
 
-function playRound() {
-  const playerRound = prompt('Your turn');
-  if ((playerRound.toLowerCase() !== 'Scissors'.toLocaleLowerCase()) && (playerRound.toLowerCase() !== 'Paper'.toLocaleLowerCase()) && (playerRound.toLowerCase() !== 'Rock'.toLocaleLowerCase())) {
-    alert('You must stick to the rules!');
-    return;
-  }
-  const computerRound = prompt('Computer round', computerPlay());
-  if ((playerRound.toLowerCase() === 'Rock'.toLocaleLowerCase()) && (computerRound === 'Paper')) {
+function playRound(playerSelection, computerSelection) {
+  if ((playerSelection.toLowerCase() === 'Rock'.toLocaleLowerCase()) && (computerSelection === 'Paper')) {
+    alert(`The computer selection is ${computerSelection}`);
     alert('You Lose! Paper beats Rock');
-  } else if ((playerRound.toLowerCase() === 'Rock'.toLocaleLowerCase()) && (computerRound === 'Scissors')) {
+    computerScore += 1;
+  } else if ((playerSelection.toLowerCase() === 'Rock'.toLocaleLowerCase()) && (computerSelection === 'Scissors')) {
+    alert(`The computer selection is ${computerSelection}`);
     alert('You Won! Rock beats Scissors');
-  } else if ((playerRound.toLowerCase() === 'Paper'.toLocaleLowerCase()) && (computerRound === 'Rock')) {
+    userScore += 1;
+  } else if ((playerSelection.toLowerCase() === 'Paper'.toLocaleLowerCase()) && (computerSelection === 'Rock')) {
+    alert(`The computer selection is ${computerSelection}`);
     alert('You Won! Paper beats Rock');
-  } else if ((playerRound.toLowerCase() === 'Paper'.toLocaleLowerCase()) && (computerRound === 'Scissors')) {
+    userScore += 1;
+  } else if ((playerSelection.toLowerCase() === 'Paper'.toLocaleLowerCase()) && (computerSelection === 'Scissors')) {
+    alert(`The computer selection is ${computerSelection}`);
     alert('You Lose! Scissors beats Paper');
-  } else if ((playerRound.toLowerCase() === 'Scissors'.toLocaleLowerCase()) && (computerRound === 'Paper')) {
+    computerScore += 1;
+  } else if ((playerSelection.toLowerCase() === 'Scissors'.toLocaleLowerCase()) && (computerSelection === 'Paper')) {
+    alert(`The computer selection is ${computerSelection}`);
     alert('You Won! Scissors beats Paper');
-  } else if ((playerRound.toLowerCase() === 'Scissors'.toLocaleLowerCase()) && (computerRound === 'Rock')) {
+    userScore += 1;
+  } else if ((playerSelection.toLowerCase() === 'Scissors'.toLocaleLowerCase()) && (computerSelection === 'Rock')) {
+    alert(`The computer selection is ${computerSelection}`);
     alert('You Lose! Rock beats Scissors');
+    computerScore += 1;
   } else {
+    alert(`The computer selection is ${computerSelection}`);
     alert('It\'s a draw');
   }
 }
