@@ -50,3 +50,20 @@ function game() {
   }
   playRound(userRound, computerPlay());
 }
+function finalGame() {
+  let i;
+  for (i = 1; i < 6; i += 1) {
+    game();
+  }
+  if (userScore < computerScore) {
+    alert('You lost the game');
+  } else if (userScore > computerScore) {
+    alert('Congratulation! you defeated the computer')
+  } else {
+    alert('No body won and no body lost! be happy');
+  }
+  alert(`Your Scor is: ${userScore}`);
+  alert(`The computer Score is: ${computerScore}`);
+}
+
+console.log(finalGame());
