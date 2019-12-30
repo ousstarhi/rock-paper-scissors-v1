@@ -41,3 +41,12 @@ function playRound(playerSelection, computerSelection) {
     alert('It\'s a draw');
   }
 }
+function game() {
+  const userRound = prompt('Your turn');
+  if ((userRound.toLowerCase() !== 'Scissors'.toLocaleLowerCase()) && (userRound.toLowerCase() !== 'Paper'.toLocaleLowerCase()) && (userRound.toLowerCase() !== 'Rock'.toLocaleLowerCase())) {
+    alert('You must stick to the rules!');
+    game();
+    return;
+  }
+  playRound(userRound, computerPlay());
+}
